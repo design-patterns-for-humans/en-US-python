@@ -67,9 +67,9 @@ Wikipedia says
 First of all we have a door interface and the implementation
 ```python
 class Door:
-    def getWidth(self):
+    def getwidth(self):
         pass
-    def getHeight(self):
+    def getheight(self):
         pass
 
 class WoodenDoor(Door):
@@ -80,23 +80,23 @@ class WoodenDoor(Door):
         self.__width = width;
         self.__height = height
 
-    def getWidth(self):
+    def getwidth(self):
         return self.__width;
 
-    def getHeight(self):
+    def getheight(self):
         return self.__height
 ```
 Then we have our door factory that makes the door and returns it
 ```python
 class DoorFactory
-    def makeDoor(width, height):
+    def makedoor(width, height):
         return WoodenDoor(width, height)
 ```
 And then it can be used as
 ```python
-door = DoorFactory.makeDoor(100, 200);
-print('Width: ', door.getWidth())
-print('Height: ', door.getHeight())
+door = DoorFactory.makedoor(100, 200);
+print('Width: ', door.getwidth())
+print('Height: ', door.getheight())
 ```
 
 **When to Use?**
@@ -121,7 +121,7 @@ Taking our hiring manager example above. First of all we have an interviewer int
 
 ```python
 class Interviewer:
-    def askQuestions(self):
+    def askquestions(self):
         pass
 
 class Developer(Interviewer):
