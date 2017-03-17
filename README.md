@@ -65,50 +65,38 @@ Wikipedia says
 **Programmatic Example**
 
 First of all we have a door interface and the implementation
-```php
-interface Door
-{
-    public function getWidth(): float;
-    public function getHeight(): float;
-}
+```python
+class Door:
+    def getWidth():
+        pass
+    def getHeight():
+        pass
 
-class WoodenDoor implements Door
-{
-    protected $width;
-    protected $height;
+class WoodenDoor(Door):
+    __width;
+    __height;
 
-    public function __construct(float $width, float $height)
-    {
-        $this->width = $width;
-        $this->height = $height;
-    }
+    def __init__(self, width, height):
+        self.__width = width;
+        self.__height = $height
 
-    public function getWidth(): float
-    {
-        return $this->width;
-    }
+    def getWidth(self):
+        return self.__width;
 
-    public function getHeight(): float
-    {
-        return $this->height;
-    }
-}
+    def getHeight(self):
+        return self.__height
 ```
 Then we have our door factory that makes the door and returns it
-```php
+```python
 class DoorFactory
-{
-    public static function makeDoor($width, $height): Door
-    {
-        return new WoodenDoor($width, $height);
-    }
-}
+    def makeDoor(width, height):
+        return WoodenDoor(width, height)
 ```
 And then it can be used as
-```php
-$door = DoorFactory::makeDoor(100, 200);
-echo 'Width: ' . $door->getWidth();
-echo 'Height: ' . $door->getHeight();
+```python
+door = DoorFactory.makeDoor(100, 200);
+print('Width: ', door.getWidth())
+print('Height: ', door.getHeight())
 ```
 
 **When to Use?**
