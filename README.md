@@ -119,72 +119,50 @@ Wikipedia says
 
 Taking our hiring manager example above. First of all we have an interviewer interface and some implementations for it
 
-```php
-interface Interviewer
-{
-    public function askQuestions();
-}
+```python
+class Interviewer:
+    def askQuestions(self):
+        pass
 
-class Developer implements Interviewer
-{
-    public function askQuestions()
-    {
-        echo 'Asking about design patterns!';
-    }
-}
+class Developer(Interviewer):
+    def askquestions(self):
+        print('Asking about design patterns!')
 
-class CommunityExecutive implements Interviewer
-{
-    public function askQuestions()
-    {
-        echo 'Asking about community building';
-    }
-}
+class CommunityExecutive(Interviewer):
+    def askquestions(self):
+        print('Asking about community building.')
 ```
 
 Now let us create our `HiringManager`
 
-```php
-abstract class HiringManager
-{
-
+```python
+class HiringManager:
     // Factory method
-    abstract public function makeInterviewer(): Interviewer;
+    def makeinterviewer(self):
+        pass
 
-    public function takeInterview()
-    {
-        $interviewer = $this->makeInterviewer();
-        $interviewer->askQuestions();
-    }
-}
-
+    def takeinterview(self)
+        interviewer = self.makeInterviewer()
+        interviewer.askquestions()
 ```
 Now any child can extend it and provide the required interviewer
-```php
-class DevelopmentManager extends HiringManager
-{
-    public function makeInterviewer(): Interviewer
-    {
-        return new Developer();
-    }
-}
-
-class MarketingManager extends HiringManager
-{
-    public function makeInterviewer(): Interviewer
-    {
-        return new CommunityExecutive();
-    }
-}
+```python
+class DevelopmentManager(HiringManager):
+    def makeinterviewer(self):
+        return Developer();
+        
+class MarketingManager(HiringManager):
+    def makeinterviewer(self):
+        return CommunityExecutive()
 ```
 and then it can be used as
 
-```php
-$devManager = new DevelopmentManager();
-$devManager->takeInterview(); // Output: Asking about design patterns
+```python
+devManager = DevelopmentManager();
+devManager.takeinterview(); // Output: Asking about design patterns!
 
-$marketingManager = new MarketingManager();
-$marketingManager->takeInterview(); // Output: Asking about community building.
+marketingManager = MarketingManager();
+marketingManager.takeinterview(); // Output: Asking about community building.
 ```
 
 **When to use?**
