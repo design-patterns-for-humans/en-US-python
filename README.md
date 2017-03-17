@@ -67,9 +67,9 @@ Wikipedia says
 First of all we have a door interface and the implementation
 ```python
 class Door:
-    def getWidth():
+    def getWidth(self):
         pass
-    def getHeight():
+    def getHeight(self):
         pass
 
 class WoodenDoor(Door):
@@ -78,7 +78,7 @@ class WoodenDoor(Door):
 
     def __init__(self, width, height):
         self.__width = width;
-        self.__height = $height
+        self.__height = height
 
     def getWidth(self):
         return self.__width;
