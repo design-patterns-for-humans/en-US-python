@@ -188,7 +188,7 @@ Translating the door example above. First of all we have our `Door` interface an
 ```python
 class Door:
     def getdescription(self):
-    pass
+        pass
 
 class WoodenDoor(Door):
     def getdescription(self):
@@ -242,7 +242,7 @@ And then it can be used as
 ```python
 woodenFactory = WoodenDoorFactory()
 woodenDoor = woodenFactory.makedoor()
-woodenExpert = woodenFactory.makefittingexpert()
+woodenDoorExpert = woodenFactory.makefittingexpert()
 
 woodenDoor.getdescription()       # Output: I am a wooden door
 woodenDoorExpert.getdescription() # Output: I can only fit wooden doors
